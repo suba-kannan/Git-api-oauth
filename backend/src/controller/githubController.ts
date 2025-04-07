@@ -27,18 +27,6 @@ export const getRepos = async (_: Request, res: Response) => {
   res.json(repos);
 };
 
-// export const updateRepo = async (req: Request, res: Response) => {
-//   const repoId = parseInt(req.params.id);
-//   const repo = await repoRepo.findOneBy({ id: repoId });
-//     if (!repo) {
-//        res.status(404).json({ message: 'Repo not found' });
-//        return;
-//     }
-//   repoRepo.merge(repo, req.body);
-//   const result = await repoRepo.save(repo);
-//   res.json(result);
-// };
-
 export const updateRepo = async (req: Request, res: Response) => {
   const repoRepo = AppDataSource.getRepository(Repo);
   const id = parseInt(req.params.id);
